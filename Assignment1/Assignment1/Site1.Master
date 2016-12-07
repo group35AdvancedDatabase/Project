@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Assignment1.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+    $(function () {
+        $('a').each(function () {
+            var actualUrl = window.location.href;
+           // alert("actualUrl:" + actualUrl);
+            var index = actualUrl.indexOf("?");
+            //alert("index:" + index);
+            if (index == -1)
+            {
+                index = actualUrl.length;
+            }
+           // alert("index:" + index);
+            var url = actualUrl.substring(0, index)
+           // alert("url:" + url);
+
+          //  alert("prop('href'):" + $(this).prop('href'));
+            if ($(this).prop('href') == url) {
+                $(this).addClass('active');
+            }
+        });
+    });
+</script>
+</head>
+<body class="body">
+    <form id="form1" class="Border" runat="server">
+        <div >
+
+            <table class="headerTable">
+                <tr>
+                    <td class="text3">My CookBook</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/banner1.jpg" alt="" class="banner" /></td>
+                </tr>
+               
+                <tr>
+                    <td>
+                        <ul class="ulMenu">
+                            <li class="liMenu"><a href="Home.aspx">Home</a></li>
+                            <li class="liMenu"><a href="Recipes.aspx">Recipes</a></li>
+                            <li class="liMenu"><a href="AddRecipe.aspx">Add Recipes</a></li>
+                            <li class="liMenu"><a href="SearchRecipe.aspx">Search Recipes</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+            </table>
+
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1"  runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+        </div>
+        <div class="footer">
+
+            <footer><small>Copyright &copy; 2016 Farhana Sharmin</small></footer>
+        </div>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+
+delete from AOD_Category;
+
+insert into AOD_Category values(1, 'Dessert');
+insert into AOD_Category values(2, 'Entry');
+insert into AOD_Category values(3, 'MainDish');
+insert into AOD_Category values(4, 'Breakfast');
+
+SELECT CATEGORY_ID,CATEGORY_NAME  FROM [AOD_CATEGORY];
+
+
+delete from AOD_CUISINE;
+
+insert into AOD_CUISINE values(1, 'Asian');
+insert into AOD_CUISINE values(2, 'Chinese');
+insert into AOD_CUISINE values(3, 'Japanise');
+
+select AOD_CUISINE.CUISINE_ID, AOD_CUISINE.CUISINE_NAME from AOD_CUISINE;
